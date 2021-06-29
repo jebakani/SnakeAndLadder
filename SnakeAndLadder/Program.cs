@@ -10,6 +10,7 @@ namespace SnakeAndLadder
         /// UC1-Initialize player and Initial position
         /// UC2- Generating Die Roll using Random class
         /// UC3- Checking whether to move forward backward based on player choice
+        /// UC4- Checking till reaches 100
         /// </summary>
         /// <param name="args">The arguments.</param>
         
@@ -30,6 +31,7 @@ namespace SnakeAndLadder
             //creating object for Random class
             Random random = new Random();
 
+            //playing till the player reaches Win position
             while (playerPos < WIN)
             {
                 //Generating DieRoll using Next method
@@ -63,6 +65,8 @@ namespace SnakeAndLadder
                 default:
                     break;
             }
+
+            //if position reaches below initial pos restart from initial pos
             if(pos<0)
             {
                 pos = 0;
