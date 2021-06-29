@@ -12,6 +12,7 @@ namespace SnakeAndLadder
         /// UC3- Checking whether to move forward backward based on player choice
         /// UC4- Checking till reaches 100
         /// UC5-Checks for Exact Win 
+        /// UC6- Display number of time to reach the win and position
         /// </summary>
         /// <param name="args">The arguments.</param>
         
@@ -30,6 +31,7 @@ namespace SnakeAndLadder
             //initializing local variable where no. of player is 1 and initial position is 0
             int player = 1;
             int playerPos = INITIAL_POS;
+            int dieRollTime = 0;
             //creating object for Random class
             Random random = new Random();
 
@@ -44,12 +46,14 @@ namespace SnakeAndLadder
 
                 //current position of player
                 playerPos = PlayerChoice(playerChoice, playerPos, dieRoll);
+
+                //increament the number of times 
+                dieRollTime++;
                 Console.WriteLine("Player Position:" + playerPos);
 
 
             }
-
-            
+            Console.WriteLine("Total number of time die rolled to reach WIN: " + dieRollTime);
             Console.Read();
         }
 
